@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Withdraw index{% endblock %}
+
+{% block body %}
+    <h1>Withdraw index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Amount</th>
+                <th>WithdrewAt</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for withdraw in withdraws %}
+            <tr>
+                <td>{{ withdraw.id }}</td>
+                <td>{{ withdraw.amount }}</td>
+                <td>{{ withdraw.withdrewAt ? withdraw.withdrewAt|date('Y-m-d') : '' }}</td>
+                <td>
+                    <a href="{{ path('withdraw_show', {'id': withdraw.id}) }}">show</a>
+                    <a href="{{ path('withdraw_edit', {'id': withdraw.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('withdraw_new') }}">Create new</a>
+{% endblock %}

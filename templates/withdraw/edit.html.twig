@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Withdraw{% endblock %}
+
+{% block body %}
+    <h1>Edit Withdraw</h1>
+
+    {{ include('withdraw/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('withdraw_index') }}">back to list</a>
+
+    {{ include('withdraw/_delete_form.html.twig') }}
+{% endblock %}

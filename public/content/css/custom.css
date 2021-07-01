@@ -1,0 +1,252 @@
+html {
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    margin: auto;
+}
+
+
+#header {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
+#logo {
+    font-size: 50px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color:red;
+    font-weight: bold;
+}
+
+.nav {
+    padding: 0;
+    color: #FFFBFB;
+}
+
+.nav-link {
+    padding: 0;
+    font-size: 16px;
+    font-family: sans-serif;
+}
+
+.nav-link:hover {
+    color: #FFFBFB;
+}
+
+.nav-item {
+    margin-right: 34px;
+    position: relative;
+}
+
+.navbar-nav {
+    align-items: center;
+}
+
+#searchBox {
+    margin-top: 200px;
+    background-color: #FFFEFE;
+    position: relative;
+    border-radius: 8px;
+    transform-origin: top center;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .12);
+    align-items: center;
+    display: flex;
+
+}
+
+
+
+
+.orderConatiner {
+ 
+    margin-top: 120px;
+    text-align: center;
+   
+    
+    
+}
+
+.orderContainerText{
+margin-top:50px;  
+padding-top: 50px;
+padding-bottom:50px;    
+font-size: 14px;
+color:#535353;
+font-family:sans-serif;
+background-color: #f5f5f5;
+
+
+
+}
+.spacing{
+    
+    widows: 1024px;
+    height: 150px;
+    position: relative;
+    
+}
+
+
+.formContent{
+    
+    margin-top: 200px;
+    margin-bottom: 300px;
+    position: relative;
+    padding: 24px 32px 40px;
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .12);
+    border-radius: 10px;
+     
+    
+}
+
+.formContent h2 {
+    font-size: 32px;
+    color: black;
+    margin-bottom: 16px;
+}
+
+
+
+
+.footerContent{
+   
+    background-color:#eaeaea;
+    
+}
+
+.footerContent ul li a {
+     color:#535353;
+    font-family:sans-serif;
+}
+
+
+
+.baners-search {
+    background: url(../images/pizza-banner.jpg) no-repeat center center;
+    background-size: cover;
+    padding: 300px 0 40px;
+ 
+   
+}
+
+
+.search-main {
+    padding: 24px 32px 40px;
+    max-width: 792px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .12);
+   border-radius: 8px;
+}
+
+.search-main h4 {
+    font-size: 32px;
+    color: #fa0029;
+    margin-bottom: 16px;
+}
+
+.search-main p {
+    font-size: 20px;
+    margin-bottom: 24px;
+    line-height: 1.2;
+}
+
+.inner-search-box .input-group {
+    max-width: 580px;
+    margin: 0 auto;
+    height: 64px;
+}
+
+.inner-search-box .input-group .form-control {
+    height: 64px;
+    background-image: url(../images/paper-plane.svg);
+    background-size: 18px;
+    background-repeat: no-repeat;
+    background-position: 97% 50%;
+    padding-right: 40px;
+}
+
+.btn-primary {
+    background-color: #266abd;
+    border-color: #266abd;
+    font-weight: bold;
+}
+
+.img-search {
+    display: none;
+}
+
+.img-search img {
+    height: 18px;
+}
+
+@media(max-width:767px) {
+    .baners-search {
+        padding: 150px 0 30px;
+    }
+}
+
+@media(max-width:575px) {
+    .search-main {
+        margin-top: 0;
+        position: relative;
+        bottom: -88px;
+    }
+    .btn-primary .text {
+        display: none;
+    }
+    .img-search {
+        display: block;
+    }
+    .search-main {
+        padding: 15px;
+    }
+    .inner-search-box .input-group,
+    .inner-search-box .input-group .form-control {
+        height: 56px;
+    }
+    .inner-search-box .input-group .btn-primary {
+        width: 56px;
+    }
+    .search-main h4 {
+        font-size: 22px;
+        margin-bottom: 8px;
+    }
+    .search-main p {
+        font-size: 14px;
+    }
+    .baners-search {
+        padding: 70px 0 0;
+    }
+    @media(max-width:575px) {
+    .formContent {
+        margin-top: 0;
+        position: relative;
+        bottom: -88px;
+    }
+@media all and (max-width: 600px) {
+  .nav-item {
+      width: 300px;
+      height:auot;
+     background-color: white;
+     text-decoration: underline;
+      
+    
+  }
+}
+}
+
+
+
+
+
+
+
+
+

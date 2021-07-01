@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Withdraw{% endblock %}
+
+{% block body %}
+    <h1>Create new Withdraw</h1>
+
+    {{ include('withdraw/_form.html.twig') }}
+
+    <a href="{{ path('withdraw_index') }}">back to list</a>
+{% endblock %}

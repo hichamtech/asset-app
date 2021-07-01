@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accounts List{% endblock %}
+
+{% block body %}
+
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            var $table1 = jQuery('#table-1');
+// Initialize DataTable
+            $table1.DataTable({
+                "aLengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                "bStateSave": true,
+                dom: 'lBfrtip',
+                buttons: [
+                    'copyHtml5',
+                    'excelHtml5',
+                    'csvHtml5',
+                    'pdfHtml5'
+                ]
+            });
+// Initalize Select Dropdown after DataTables is created
+            $table1.closest('.dataTables_wrapper').find('select').select2({
+                minimumResultsForSearch: -1
+            });
+        });
+    </script>
+    <div class="row">
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}
+    </div>
+    <h4 style="padding: 10px 0;">Account List</h4>
+    <span><a href="{{ path('account_new') }}" class="btn btn-primary">Add an account</a></span>
+    <table class="table table-bordered datatable" id="table-1">
+        <thead>
+        <tr>
+            <th class="sorting_disabled">ID</th>
+            <th class="sorting_asc">name</th>
+            <th class="sorting_asc">balance</th>
+            <th class="col-md-3">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for account in accounts %}
+            <tr class="odd gradeX">
+                <td style="vertical-align: middle;">{{ account.id }}</td>
+                <td style="vertical-align: middle;">{{ account.name }}</td>
+                <td style="vertical-align: middle;">$ {{ account.blance }}</td>
+                <td class="col-md-3" style="vertical-align: middle; text-align: center;">
+                    <a href="{{ path('account_edit', {'id': account.id}) }}"
+                       class="btn btn-primary btn-sm btn-icon icon-left"> <i class="entypo-pencil"></i>Edit</a>
+                    <a href="{{ path('account_delete', {'id': account.id}) }}"
+                       class="btn btn-primary btn-sm btn-icon icon-left"> <i class="entypo-trash"></i>Delete</a>
+
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+        <tfoot>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Balance</th>
+            <th>Actions</th>
+        </tr>
+        </tfoot>
+    </table>
+
+
+{% endblock %}

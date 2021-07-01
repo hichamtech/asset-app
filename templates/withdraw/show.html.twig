@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Withdraw{% endblock %}
+
+{% block body %}
+    <h1>Withdraw</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ withdraw.id }}</td>
+            </tr>
+            <tr>
+                <th>Amount</th>
+                <td>{{ withdraw.amount }}</td>
+            </tr>
+            <tr>
+                <th>WithdrewAt</th>
+                <td>{{ withdraw.withdrewAt ? withdraw.withdrewAt|date('Y-m-d') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('withdraw_index') }}">back to list</a>
+
+    <a href="{{ path('withdraw_edit', {'id': withdraw.id}) }}">edit</a>
+
+    {{ include('withdraw/_delete_form.html.twig') }}
+{% endblock %}
